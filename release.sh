@@ -22,6 +22,8 @@ do_release() {
 }
 
 do_sourcepkg() {
+    make clean
+    make distclean
     ./autogen.sh
     #tar and gzip and stuff like that
 }
