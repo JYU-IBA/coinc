@@ -8,6 +8,7 @@ You have been warned.
 "
 
 do_release() {
+    ./autogen.sh
     make clean;
     make distclean;
     git clean -f;
@@ -17,15 +18,18 @@ do_release() {
     echo "CHECK THE STATUS OF THE REPOSITORY."
     read -p "About to tag the repo and create a bare (autogen.sh needs to be run) source package for version $version. Is this ok? ^C if not.";
     git tag $version
-    git archive -o "../coinc-$version-bare.tar.gz" --prefix="coinc-$version/" HEAD;
-    echo "Now you can run autogen.sh and make the real source package"
+#    git archive -o "../coinc-$version-bare.tar.gz" --prefix="coinc-$version/" HEAD;
+    ./autogen.sh
+    ./configure
+    make dist
 }
 
 do_sourcepkg() {
     make clean
     make distclean
     ./autogen.sh
-    #tar and gzip and stuff like that
+    ./configure
+    make dist
 }
 
 read -p "Do you wish to continue? " reply
