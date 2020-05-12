@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2013-2019 Jaakko Julin <jaakko.julin@gmail.com>
+    Copyright (C) 2013-2020 Jaakko Julin <jaakko.julin@jyu.fi>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 #include <string.h>
 #include <inttypes.h>
 #include <limits.h>
-#include <config.h>
+#include <coinc_config.h>
 
 #define N_ADCS_MAX 128
 #define COINC_TABLE_SIZE_DEFAULT 20
@@ -157,7 +157,7 @@ int main (int argc, char **argv) {
 
 
     if(argc==1) {
-        fprintf(stderr, "%s\n", PACKAGE_STRING);
+        fprintf(stderr, "coinc %s\n", coinc_VERSION);
 		fprintf(stderr, HELP_TEXT, argv[0]);
     	fprintf(stderr, LICENCE_TEXT);
 		return 0;
