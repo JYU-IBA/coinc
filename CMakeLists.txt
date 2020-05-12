@@ -23,7 +23,6 @@ set(CPACK_SOURCE_IGNORE_FILES
         ".DS_Store$"
         "^${CMAKE_SOURCE_DIR}/build/"
         "^${CMAKE_SOURCE_DIR}/cmake-build-.*/"
-        "^${CMAKE_SOURCE_DIR}/gui/build-.*/"
 )
 set(CPACK_SOURCE_PACKAGE_FILE_NAME "coinc-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
 include(CPack)
